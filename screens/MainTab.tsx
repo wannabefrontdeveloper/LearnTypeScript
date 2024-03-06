@@ -19,3 +19,35 @@ export type MainTabNavigationprop = CompositeNavigationProp<RootStackNavigationP
 export type MainTabNavigationScreenParams = NavigatorScreenParams<MainTabParamList>;
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
+
+function HomeScreen() {
+  const navigation = useNavigation<MainTabNavigationprop>();
+  const onPress=() => {
+    navigation.navigate('Detail', {id: 1});
+  };
+  return (
+    <View>
+      <Text>Home</Text>
+      <Button title="Open Detail" onPress={onPress} />
+    </View>
+  );
+}
+
+function AccountScreen() {
+  return (
+    <View>
+      <Text>Account</Text>
+    </View>
+  );
+}
+
+function MainTab() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Account" component={AccountScreen} />
+    </Tab.Navigator>
+  );
+}
+
+export default MainTab;
