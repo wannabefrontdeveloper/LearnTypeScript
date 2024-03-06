@@ -7,7 +7,7 @@ interface Props {
   image:string;
 }
 
-function Profile({name, isActive, image}: Props) {
+function Profile({name, isActive, image='https://picsum.photos/200'}: Props) {
   return (
     <View style={isActive && styles.activeStyle}>
       <Image source={{uri: image}} />
@@ -15,10 +15,6 @@ function Profile({name, isActive, image}: Props) {
     </View>
   );
 }
-
-Profile.defaultProps={
-  image:'https://picsum.photo/200',
-};
 
 const styles = StyleSheet.create({
   activeStyle: {
