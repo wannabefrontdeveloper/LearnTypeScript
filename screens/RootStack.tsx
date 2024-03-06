@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Text, View } from 'react-native';
 import { createNativeStackNavigator, NativeStackNavigationProp, } from '@react-navigation/native-stack';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, RouteProp, useRoute } from '@react-navigation/native';
 
 
 type RootStackParamList = {
@@ -29,10 +29,12 @@ function HomeScreen() {
   );
 }
 
+type DetailScreenRouteProp = RouteProp<RootStackParamList, 'Detail'>;
+
 function DetailScreen() {
   return (
     <View>
-      <Text>Detail</Text>
+      <Text>Detail {params.id} </Text>
     </View>
   );
 }
