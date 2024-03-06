@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Text, View } from 'react-native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createNativeStackNavigator, NativeStackNavigationProp, } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
 
 
@@ -11,12 +11,15 @@ type RootStackParamList = {
   };
 };
 
-const Stack = createNativeStackNavigator();
+export type RootStackNavigationProp = 
+  NativeStackNavigationProp<RootStackParamList>;
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function HomeScreen() {
   const navigation = useNavigation();
   const onPress = () => {
-    navigation.navigate('Detail');
+    navigation.navigate('Detail', {id: 1});
   };
   return (
     <View>
