@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, Image } from 'react-native';
 interface Props {
   name: string;
   isActive?: boolean;
-  image:string;
+  image?:string;
   children: React.ReactNode;
 }
 
