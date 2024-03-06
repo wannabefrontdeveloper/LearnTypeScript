@@ -1,12 +1,7 @@
 module.exports = {
   root: true,
-  extends: '@react-native',
+  extends: '@react-native-community',
   rules: {
-    'prettier/prettier': [
-      'error',
-      {
-        endOfLine: 'auto',
-      },
-    ],
+    '@typescript-eslint/no-unused-vars': 0,
   },
 };
